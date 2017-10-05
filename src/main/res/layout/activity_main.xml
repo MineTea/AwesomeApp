@@ -9,23 +9,37 @@
     android:orientation="vertical"
     tools:context="com.example.awesomeapp.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/content"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="538dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="83dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/title_background"
+                android:gravity="center"
+                android:text="AppName"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager_MainActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 
-    </FrameLayout>
+    </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation"/>

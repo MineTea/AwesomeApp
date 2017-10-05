@@ -1,16 +1,16 @@
 package com.example.awesomeapp;
 
-import android.content.res.ColorStateList;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.StaticLayout;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.WindowManager;
 
 import com.example.awesomeapp.fragments_mainactivity.FragmentDownloads_MainActivity;
 import com.example.awesomeapp.fragments_mainactivity.FragmentHome_MainActivity;
@@ -34,12 +34,19 @@ public class MainActivity extends AppCompatActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		//获取底部导航栏，绑定被选择的事件
-		BottomNavigationView bottomNavigation = (BottomNavigationView)findViewById(R.id.bottomNavigation);
-		bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+		//采用新版本的隐藏标题栏方法
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.hide();
+		//透明状态栏
+		initState();
 		
-		//获取 ViewPager
-		final ViewPager viewPager_MainActivity =  (ViewPager)findViewById(R.id.viewPager_MainActivity);
+		//获取底部导航栏，绑定被选择的事件
+		BottomNavigationView bottomNavigationView_MainActivity = (BottomNavigationView)findViewById(R.id.bottomNavigation);
+		this.bottomNavigation_MainActivity = bottomNavigationView_MainActivity;
+		bottomNavigationView_MainActivity.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+		
+		//获取 NoscrollViewPager
+		ViewPager viewPager_MainActivity =  (ViewPager)findViewById(R.id.viewPager_MainActivity);
 		this.viewPager_MainActivity = viewPager_MainActivity;
 		//创建 Fragments List , 并加入到 Adapter
 		List<Fragment> myFragments_MainActivity = new ArrayList<Fragment>();
@@ -52,6 +59,13 @@ public class MainActivity extends AppCompatActivity
 		viewPager_MainActivity.setAdapter(myAdapt_MainActivity);
 			
 		}
+	
+	//透明状态栏
+	private void initState() {
+	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+	getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+	}
+	}
 	
 	//底部导航栏的点击事件监听
 	private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
