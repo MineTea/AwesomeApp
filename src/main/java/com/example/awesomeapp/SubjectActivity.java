@@ -1,6 +1,7 @@
 package com.example.awesomeapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -28,7 +29,7 @@ public class SubjectActivity extends AppCompatActivity
 	{
 	
 	//获取各种控件
-	private ViewPager viewpager;
+	public static ViewPager viewpager;
 	private SmartTabLayout smarttab;
 	
 	
@@ -49,13 +50,16 @@ public class SubjectActivity extends AppCompatActivity
 		fragments.add(new Fragment_Chinese());
 		fragments.add(new Fragment_Maths());
 		MyAdapt myAdapt = new MyAdapt(getSupportFragmentManager(),fragments);
-		ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
-		this.viewpager = viewpager;
+		this.viewpager = (ViewPager) findViewById(R.id.viewpager);
 		viewpager.setAdapter(myAdapt);
 		//添加 smarttablayout
-		SmartTabLayout  smarttab = (SmartTabLayout) findViewById(R.id.smarttab);
-		this.smarttab = smarttab;
+		this.smarttab = (SmartTabLayout) findViewById(R.id.smarttab);
 		smarttab.setViewPager(viewpager);
+		//从 MainActivity 中获取 intent ,设置页面
+		Intent intent = getIntent();
+		Bundle bundle = intent.getExtras();
+		int page = bundle.getInt("page");
+		viewpager.setCurrentItem(page);
 			
 		}
 	

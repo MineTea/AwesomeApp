@@ -21,7 +21,7 @@ public class FragmentHome_MainActivity extends Fragment
 	{
 	
 	//获取各个控件
-	private Button button6;
+	public static Button button6;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -37,9 +37,11 @@ public class FragmentHome_MainActivity extends Fragment
 		
 		super.onActivityCreated(savedInstanceState);
 		
-		//生成 intent 对象，用于 activity 之间通信
+		//创建 intent ，用于 activity 之间通信
 		final Intent intent = new Intent();
 		intent.setClass(getActivity().getApplicationContext(),SubjectActivity.class);
+		//设置要被传输的数据的容器
+		final Bundle bundle = new Bundle();
 		
 		//获取按钮
 		Button button6 = (Button)getActivity().findViewById(R.id.button6);
@@ -49,6 +51,8 @@ public class FragmentHome_MainActivity extends Fragment
 			@Override
 			public void onClick(View view)
 				{
+				bundle.putInt("page_chinese",0);
+				intent.putExtras(bundle);
 				startActivity(intent);
 				}
 			});
