@@ -28,9 +28,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile project(':volley')
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
     compile 'com.android.support:support-vector-drawable:26.+'
+    compile 'com.android.support:support-v4:26.+'
     testCompile 'junit:junit:4.12'
-    compile project(':volley')
 }
