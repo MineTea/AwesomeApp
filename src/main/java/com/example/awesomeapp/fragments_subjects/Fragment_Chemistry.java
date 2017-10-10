@@ -1,39 +1,31 @@
 package com.example.awesomeapp.fragments_subjects;
 
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.MediaController;
-import android.widget.Toast;
-import android.widget.VideoView;
 
 import com.example.awesomeapp.R;
-import com.example.awesomeapp.SubjectActivity;
-import com.example.awesomeapp.javabean_fragments_subjects.DefaultMessages;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by minetea on 2017/10/5.
+ * Created by minetea on 2017/10/6.
  */
 
-public class Fragment_Chinese extends Fragment
+public class Fragment_Chemistry extends Fragment
 	{
 	
-	ListView listview1;
+	private ListView listview1;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
+		
 		View view = inflater.inflate(R.layout.fragment_subjects,container,false);
 		
 		//获取 listview

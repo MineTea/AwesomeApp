@@ -2,6 +2,7 @@ package com.example.awesomeapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.session.MediaController;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -14,8 +15,15 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.awesomeapp.fragments_mainactivity.MyAdapt;
+import com.example.awesomeapp.fragments_subjects.Fragment_Biology;
+import com.example.awesomeapp.fragments_subjects.Fragment_Chemistry;
 import com.example.awesomeapp.fragments_subjects.Fragment_Chinese;
+import com.example.awesomeapp.fragments_subjects.Fragment_English;
+import com.example.awesomeapp.fragments_subjects.Fragment_Geography;
+import com.example.awesomeapp.fragments_subjects.Fragment_History;
 import com.example.awesomeapp.fragments_subjects.Fragment_Maths;
+import com.example.awesomeapp.fragments_subjects.Fragment_Physics;
+import com.example.awesomeapp.fragments_subjects.Fragment_Politics;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
 import java.util.ArrayList;
@@ -31,6 +39,7 @@ public class SubjectActivity extends AppCompatActivity
 	//获取各种控件
 	public static ViewPager viewpager;
 	private SmartTabLayout smarttab;
+	private MediaController mediaController;
 	
 	
 	@Override
@@ -49,6 +58,14 @@ public class SubjectActivity extends AppCompatActivity
 		List<Fragment> fragments = new ArrayList<Fragment>();
 		fragments.add(new Fragment_Chinese());
 		fragments.add(new Fragment_Maths());
+		fragments.add(new Fragment_English());
+		fragments.add(new Fragment_Physics());
+		fragments.add(new Fragment_Chemistry());
+		fragments.add(new Fragment_Biology());
+		fragments.add(new Fragment_Politics());
+		fragments.add(new Fragment_History());
+		fragments.add(new Fragment_Geography());
+		
 		MyAdapt myAdapt = new MyAdapt(getSupportFragmentManager(),fragments);
 		this.viewpager = (ViewPager) findViewById(R.id.viewpager);
 		viewpager.setAdapter(myAdapt);
@@ -60,7 +77,7 @@ public class SubjectActivity extends AppCompatActivity
 		Bundle bundle = intent.getExtras();
 		int page = bundle.getInt("page");
 		viewpager.setCurrentItem(page);
-			
+		
 		}
 	
 	//透明状态栏

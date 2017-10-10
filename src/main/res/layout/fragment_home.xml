@@ -47,20 +47,20 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button6"
+                        android:id="@+id/button_chinese"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:background="@drawable/chinese_icon_fragmenthome"/>
 
                     <Button
-                        android:id="@+id/button5"
+                        android:id="@+id/button_physics"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:layout_weight="1"
                         android:background="@drawable/physics_icon_fragmenthome"/>
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/button_history"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:layout_weight="1"
@@ -75,21 +75,21 @@
 
 
                     <Button
-                        android:id="@+id/button9"
+                        android:id="@+id/button_maths"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:layout_weight="1"
                         android:background="@drawable/maths_icon_fragment"/>
 
                     <Button
-                        android:id="@+id/button8"
+                        android:id="@+id/button_chemistry"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:layout_weight="1"
                         android:background="@drawable/chemistry_icon_fragmenthome"/>
 
                     <Button
-                        android:id="@+id/button7"
+                        android:id="@+id/button_politics"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:layout_weight="1"
@@ -103,21 +103,21 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button12"
+                        android:id="@+id/button_english"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:layout_weight="1"
                         android:background="@drawable/english_icon_fragment"/>
 
                     <Button
-                        android:id="@+id/button11"
+                        android:id="@+id/button_biology"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:layout_weight="1"
                         android:background="@drawable/biology_icon_fragmenthome"/>
 
                     <Button
-                        android:id="@+id/button10"
+                        android:id="@+id/button_geography"
                         android:layout_width="match_parent"
                         android:layout_height="117dp"
                         android:layout_weight="1"
