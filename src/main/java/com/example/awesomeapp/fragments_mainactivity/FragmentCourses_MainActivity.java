@@ -16,7 +16,7 @@ import com.example.awesomeapp.R;
  * Created by minetea on 2017/10/4.
  */
 
-public class FragmentDownloads_MainActivity extends Fragment
+public class FragmentCourses_MainActivity extends Fragment
 	{
 	
 	

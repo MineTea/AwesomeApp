@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
-import com.example.awesomeapp.fragments_mainactivity.FragmentDownloads_MainActivity;
+import com.example.awesomeapp.fragments_mainactivity.FragmentCourses_MainActivity;
 import com.example.awesomeapp.fragments_mainactivity.FragmentHome_MainActivity;
 import com.example.awesomeapp.fragments_mainactivity.FragmentNotification_MainActivity;
 import com.example.awesomeapp.fragments_mainactivity.FragmentPerson_MainActivity;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity
 		//创建 Fragments List , 并加入到 Adapter
 		List<Fragment> myFragments_MainActivity = new ArrayList<Fragment>();
 		myFragments_MainActivity.add(new FragmentHome_MainActivity());
-		myFragments_MainActivity.add(new FragmentDownloads_MainActivity());
+		myFragments_MainActivity.add(new FragmentCourses_MainActivity());
 		myFragments_MainActivity.add(new FragmentNotification_MainActivity());
 		myFragments_MainActivity.add(new FragmentPerson_MainActivity());
 		MyAdapt myAdapt_MainActivity = new MyAdapt(getSupportFragmentManager(),myFragments_MainActivity);

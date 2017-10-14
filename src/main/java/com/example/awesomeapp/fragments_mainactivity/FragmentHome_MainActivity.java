@@ -1,6 +1,7 @@
 package com.example.awesomeapp.fragments_mainactivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +11,11 @@ import android.widget.Button;
 
 import com.example.awesomeapp.R;
 import com.example.awesomeapp.SubjectActivity;
+import com.example.awesomeapp.banner.GlideImageLoader;
+import com.youth.banner.Banner;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by minetea on 2017/10/4.
@@ -28,6 +34,8 @@ public class FragmentHome_MainActivity extends Fragment
 	private Button button_politics;
 	private Button button_history;
 	private Button button_geography;
+	
+	private Banner banner_Home;
 	
 	private static Bundle bundle;
 	
@@ -50,6 +58,18 @@ public class FragmentHome_MainActivity extends Fragment
 		intent.setClass(getActivity().getApplicationContext(),SubjectActivity.class);
 		//创建容器，并指定为 bundle
 		this.bundle = new Bundle();
+		
+		//获取 banner
+		this.banner_Home = (Banner) getActivity().findViewById(R.id.banner_Home);
+		//配置 banner
+		banner_Home.setImageLoader(new GlideImageLoader());
+		//设置图片集合
+		Uri uri1 = Uri.parse("http://img3.sycdn.imooc.com/56e6177e0001fada06000338-240-135.jpg");
+		Uri uri2 = Uri.parse("http://img1.sycdn.imooc.com/59437af00001461e06000338-240-135.jpg");
+		Uri[] list = {uri1,uri2};
+		List images = Arrays.asList(list);
+		banner_Home.setImages(images);
+		banner_Home.start();
 		
 		//获取按钮
 		this.button_chinese = (Button)getActivity().findViewById(R.id.button_chinese);
@@ -154,6 +174,13 @@ public class FragmentHome_MainActivity extends Fragment
 				}
 			});
 		
+		}
+	
+	@Override
+	public void onStart()
+		{
+		super.onStart();
+		banner_Home.startAutoPlay();
 		}
 	
 	}

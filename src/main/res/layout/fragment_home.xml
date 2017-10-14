@@ -10,6 +10,8 @@
         android:layout_height="match_parent"
         >
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -23,21 +25,24 @@
                 android:gravity="center"
                 android:text="搜索"/>
 
-            <android.support.v4.view.ViewPager
+            <com.youth.banner.Banner
+                android:id="@+id/banner_Home"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"></android.support.v4.view.ViewPager>
+                android:layout_height="220dp"></com.youth.banner.Banner>
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
+                android:background="@android:color/background_light"
                 android:gravity="center_vertical"
-                android:textSize="20sp"
-                android:text="  科目分类"/>
+                android:text="  科目分类"
+                android:textSize="20sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="352dp"
+                android:background="@android:color/background_light"
                 android:orientation="horizontal">
 
                 <LinearLayout

@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.awesomeapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- if you want to load images from the internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- if you want to load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -25,6 +29,10 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_subject"
             android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name=".VideoActivity"
+            android:configChanges="orientation|screenSize">
         </activity>
     </application>
 
