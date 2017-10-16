@@ -4,10 +4,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button"
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"/>
+        android:layout_height="match_parent"></WebView>
 
 </LinearLayout>

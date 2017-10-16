@@ -10,8 +10,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
 
+import com.example.awesomeapp.fragments_mainactivity.CustomViewPager;
 import com.example.awesomeapp.fragments_mainactivity.FragmentCourses_MainActivity;
 import com.example.awesomeapp.fragments_mainactivity.FragmentHome_MainActivity;
 import com.example.awesomeapp.fragments_mainactivity.FragmentNotification_MainActivity;
@@ -26,7 +29,7 @@ public class MainActivity extends AppCompatActivity
 	
 	//声明各种控件
 	private BottomNavigationView bottomNavigation_MainActivity;
-	private ViewPager viewPager_MainActivity;
+	private CustomViewPager viewPager_MainActivity;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -45,8 +48,8 @@ public class MainActivity extends AppCompatActivity
 		this.bottomNavigation_MainActivity = bottomNavigationView_MainActivity;
 		bottomNavigationView_MainActivity.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 		
-		//获取 NoscrollViewPager
-		ViewPager viewPager_MainActivity =  (ViewPager)findViewById(R.id.viewPager_MainActivity);
+		//获取 ViewPager
+		CustomViewPager viewPager_MainActivity =  (CustomViewPager)findViewById(R.id.viewPager_MainActivity);
 		this.viewPager_MainActivity = viewPager_MainActivity;
 		//创建 Fragments List , 并加入到 Adapter
 		List<Fragment> myFragments_MainActivity = new ArrayList<Fragment>();

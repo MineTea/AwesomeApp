@@ -9,15 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.WindowManager;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
 import com.example.awesomeapp.fragments_subjects.FullScreenVideoView;
+
+import cn.jzvd.JZVideoPlayer;
+import cn.jzvd.JZVideoPlayerStandard;
 
 public class VideoActivity extends AppCompatActivity
 	{
 	
-	private FullScreenVideoView videoView2;
+	private JZVideoPlayerStandard videoplayer;
 	Intent intent;
 	
 	@Override
@@ -32,11 +33,6 @@ public class VideoActivity extends AppCompatActivity
 		//透明状态栏
 		initState();
 		
-		
-		
-		//横竖屏接收事件
-		
-		
 		}
 	
 	@Override
@@ -46,19 +42,28 @@ public class VideoActivity extends AppCompatActivity
 		super.onStart();
 		
 		//播放网络视频功能
-		FullScreenVideoView videoView2 = (FullScreenVideoView)findViewById(R.id.videoView2);
-		videoView2.setMediaController(new MediaController(this));
+		JZVideoPlayerStandard videoplayer = (JZVideoPlayerStandard) findViewById(R.id.videoplayer);
 		
 		//获取从上一个 activity 中传入的 url
 		this.intent = this.getIntent();
 		Bundle bundle = intent.getExtras();
 		String url = bundle.getString("url");
-		Uri uri = Uri.parse(url);
 		
-		videoView2.setVideoURI(uri);
-		videoView2.start();
+		videoplayer.setUp(url,JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, " ");
 		
 		}
+	@Override
+	public void onBackPressed() {
+	if (JZVideoPlayer.backPress()) {
+	return;
+	}
+	super.onBackPressed();
+	}
+	@Override
+	protected void onPause() {
+	super.onPause();
+	JZVideoPlayer.releaseAllVideos();
+	}
 	
 	//透明状态栏
 	private void initState() {

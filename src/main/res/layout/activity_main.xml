@@ -37,10 +37,10 @@
 
         </RelativeLayout>
 
-        <android.support.v4.view.ViewPager
+        <com.example.awesomeapp.fragments_mainactivity.CustomViewPager
             android:id="@+id/viewPager_MainActivity"
             android:layout_width="match_parent"
-            android:layout_height="481dp"></android.support.v4.view.ViewPager>
+            android:layout_height="481dp"></com.example.awesomeapp.fragments_mainactivity.CustomViewPager>
 
     </LinearLayout>
 

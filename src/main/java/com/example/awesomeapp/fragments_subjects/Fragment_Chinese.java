@@ -72,7 +72,7 @@ public class Fragment_Chinese extends Fragment
 					case 1:
 						//设置要加入到 intent 的bundle 用于传输视频 url
 						bundle = new Bundle();
-						bundle.putString("url","rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov");
+						bundle.putString("url","http://www.jmzsjy.com/UploadFile/微课/地方风味小吃——宫廷香酥牛肉饼.mp4");
 						intent.putExtras(bundle);
 						startActivity(intent);
 						break;
